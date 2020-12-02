@@ -1,74 +1,142 @@
 using System;
 
-
-namespace EComerce
- {
-
-    class Custumer
+namespace ECommerce
+{
+    class Costomer
     {
-             
-             // Fields or Attribute
+        // Fields or Attributes
+        // Più privati possibili
 
-            protected int Id;
-            
-            protected string Name;
+        // Properties
+        // getter - setter
 
-            protected string SurName;
+        // private string _X
+        // _X -> Underscore convenzione che indica attributo privato
 
-            protected string LastName;
+        protected int Id;
+        protected string FirstName;
+        protected string LastName;
+        protected string Adress;
+        protected int PostalCode;
+        protected string Email;
+        protected string Password;
+        public int Age { get; set;}
 
-            protected string Email;
+        // Constructor
+        public Costomer(string firstName, string lastName, string email)
+        {
+            // Called on instantiation
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+        }
 
-            protected string Password;
-
-            //
-            // visibilità -valore di ritorno -NomeMetodo();
-
-            public Custumer(string name,string surName){
-                this.Name=name;
-                this.SurName=surName;
-
-            }
-
+        // Methods
+        // visibility - returned value - MethodName()
         public void Login()
         {
-            Console.WriteLine("Your a logged in.");
+            Console.WriteLine($"Hi {this.FirstName} {this.LastName}, you are logged in.");
         }
-
-        public void Aquista()
+        public void CheckOut()
         {
-            Console.WriteLine("Your a buy .");
+            Console.WriteLine("Product(s) purchased.");
         }
-
-        public  void IMieiOrdini()
+        public void MyOrders()
         {
-            Console.WriteLine("Your storage.");
+            Console.WriteLine("These are your orders.");
         }
-
         public void WishList()
         {
-            Console.WriteLine("Your WhistList.");
+            Console.WriteLine("This is your wishlist.");
+        }
+        public void AddToCart()
+        {
+                Console.WriteLine("article added to cart!");
+        }
+        public void Signin()
+        {
+            Console.WriteLine("You are now signed in.");
         }
 
-        public void Carello()
-        {
-            Console.WriteLine("Your shopping cart .");
-        }
-        public void Registrazione()
-        {
-            Console.WriteLine("Your Registration .");
-        }
-
+        
     }
 
+    class Article
+    {
+        // private int Id; // Field
+        // private int Id { get; set; }; // Property
+        public int Id { get; }
+        public string Description { get; set; }
+        public double Price { get; set; }
+        public int Stock { get; set; }
+        private int TaxeRate;
+        
+        public Article(string description, double price)
+        {
+            this.Description = description;
+            this.Price = price;
+        }
 
+        public void List() 
+        {
+            Console.WriteLine("List all articles");
+        }
 
+        public void Create()
+        {
+            Console.WriteLine("Create new article");
+        }
 
+        public void Retrieve(int id)
+        {
+            Console.WriteLine($"Id: {this.Id}, description: {this.Description}, price: {this.Price}");
+        }
 
+        public void Update()
+        {
+            Console.WriteLine("Update your article.");
+        }
 
+        public void Destroy(int id)
+        {
+            Console.WriteLine($"You just destroyed item #{id}");
+        }
+    }
 
+    //OrderHeader
+    class OrderHeader 
+    {
+        public int Id { get; }
+        public string OrderNumber { get; }
+        public DateTime Date { get; }
+        public int UserId { get; }
 
-} 
+        public OrderHeader(int userId, DateTime date)
+        {
+            //this.UserId or UserId 
+            this.UserId = userId;
+            this.Date = date;
+        }
 
-
-
+        public void Create()
+        {
+            Console.WriteLine("Create new order");
+        }
+        public void List() 
+        {
+            Console.WriteLine("List all orders");
+        }
+        public void Retrieve(int id)
+        {
+            Console.WriteLine($"Id: {this.Id}, OrderNumber: {this.OrderNumber}, UserId: {this.UserId}, Date: {this.Date}");
+        }
+        public void Update()
+        {
+            Console.WriteLine("Update your order");
+        }
+        public void Destroy(int id)
+        {
+            Console.WriteLine("You have cancelled this order ");
+        }
+    }
+}

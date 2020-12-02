@@ -1,22 +1,51 @@
 ﻿using System;
-using EComerce;
+using ECommerce;
 
 namespace CSharpExercises
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-            /*Console.WriteLine("inserisci nome");
-            string myname = Console.Readline();
-            Console.WriteLine($"Your name is  { myName.ToUpper()}");*/
+            for (int i = 0; i < args.Length; i++)
+            {
+                Console.WriteLine(args[i].ToUpper());
+            }
+
+            // var firstCustomer = new Customer();
+            Costomer firstCostomer = new Costomer("Romeo", "Colosseo", "romeocoloss@gmail.com");
+            firstCostomer.Login();
+
+            Costomer secondCostomer = new Costomer("Mario", "Rossi", "m.rossi99@hotmail.com");
+            secondCostomer.Login();
 
 
-            Costumer.PrintSomething();
-            //var firstCustomer = new Customer();
-            Customer firstCustomer = new Customer("pinco","Palo");
-            secondCustomer.Login();
+            //class Article
+
+            Article article = new Article("Face mask", 15.54);
+
+            article.List();
+            article.Retrieve(0);
+            article.Destroy(0);
+
+            Console.WriteLine(article.Description);
+
+            article.Description = "articolo"; 
+
+
+            Console.WriteLine($"{article.Description} price is : {article.Price}");
+
+            
+
+            OrderHeader orderHeader = new OrderHeader(20, DateTime.Now);
+
+            orderHeader.List();
+            orderHeader.Retrieve(0);
+            orderHeader.Destroy(0);
+            
+            Console.WriteLine($"Date: {orderHeader.Date}, UserID: {orderHeader.UserId}");
+
+            
         }
     }
 }
