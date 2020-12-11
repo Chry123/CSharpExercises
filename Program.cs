@@ -1,51 +1,20 @@
 ﻿using System;
-using ECommerce;
+using ExLinq;
 
-namespace CSharpExercises
+namespace program
 {
-    class Program
-    {
-        static void Main(string[] args)
+        class program
         {
-            for (int i = 0; i < args.Length; i++)
+            public static void Main(string[] args)
             {
-                Console.WriteLine(args[i].ToUpper());
+                var cities = exLinq.filtering("Firenze");
+
+                foreach (var city in cities)
+                {
+                    Console.WriteLine("E' una citta");
+                }
             }
 
-            // var firstCustomer = new Customer();
-            Costomer firstCostomer = new Costomer("Romeo", "Colosseo", "romeocoloss@gmail.com");
-            firstCostomer.Login();
-
-            Costomer secondCostomer = new Costomer("Mario", "Rossi", "m.rossi99@hotmail.com");
-            secondCostomer.Login();
-
-
-            //class Article
-
-            Article article = new Article("Face mask", 15.54);
-
-            article.List();
-            article.Retrieve(0);
-            article.Destroy(0);
-
-            Console.WriteLine(article.Description);
-
-            article.Description = "articolo"; 
-
-
-            Console.WriteLine($"{article.Description} price is : {article.Price}");
-
-            
-
-            OrderHeader orderHeader = new OrderHeader(20, DateTime.Now);
-
-            orderHeader.List();
-            orderHeader.Retrieve(0);
-            orderHeader.Destroy(0);
-            
-            Console.WriteLine($"Date: {orderHeader.Date}, UserID: {orderHeader.UserId}");
-
-            
         }
-    }
+
 }

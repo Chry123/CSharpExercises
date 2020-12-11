@@ -1,3 +1,65 @@
+//PROGRAM.CS ES
+/*using ECommerce;
+
+namespace CSharpExercises
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                Console.WriteLine(args[i].ToUpper());
+            }
+
+            // var firstCustomer = new Customer();
+            Costomer firstCostomer = new Costomer("Romeo", "Colosseo", "romeocoloss@gmail.com");
+            firstCostomer.Login();
+
+            Costomer secondCostomer = new Costomer("Mario", "Rossi", "m.rossi99@hotmail.com");
+            secondCostomer.Login();
+
+
+            //class Article
+
+            Article article = new Article("Face mask", 15.54);
+            //Article article2 = new Article  (" Sometime ", 50.99, );
+
+            article.List();
+            article.Retrieve(0);
+            article.Destroy(0);
+
+            Console.WriteLine(article.Description);
+
+            article.Description = "articolo"; 
+
+
+            Console.WriteLine($"{article.Description} price is : {article.Price}");
+
+            
+
+            OrderHeader orderHeader = new OrderHeader(20, DateTime.Now);
+
+            orderHeader.List();
+            orderHeader.Retrieve(0);
+            orderHeader.Destroy(0);
+            
+            Console.WriteLine($"Date: {orderHeader.Date}, UserID: {orderHeader.UserId}");
+
+
+            Management management = new Management()
+
+
+            //article2.Order(secondCustomer);  
+
+
+            
+        }
+    }
+}
+*/
+
+
 using System;
 
 namespace ECommerce
@@ -138,5 +200,69 @@ namespace ECommerce
         {
             Console.WriteLine("You have cancelled this order ");
         }
+    }
+
+    class Management 
+    {
+
+        private int Admin;
+
+        private Management ( int Admin)
+        {
+            this.Admin = Admin;
+        }
+
+       public void Login()
+        {
+            Console.WriteLine(" logged in ");
+        }
+        public void OrderControl()
+        {
+             Console.WriteLine(" order management ");
+        }
+        public void OrderArticle()
+        {
+            Console.WriteLine(" Article management ");
+        }
+        public void OrderCustomer()
+        {
+            Console.WriteLine(" Customer management ");
+        }
+
+
+    }
+
+    class OrderDetail
+    {
+        private int Id; 
+        public int idOrder;
+        public int idArticle;
+        private float Price;
+        private int qta;
+
+
+    }
+
+
+    class Cart
+    {
+        private int Id;
+        private int idArticle;
+        private string Customer;
+        private int qta;
+
+        public void Buy()
+        {
+            Console.WriteLine(" Buy... ");
+        }
+        public void Empty()
+        {
+            Console.WriteLine(" Empty cart.. ");
+        }
+        public void List()
+        {
+            Console.WriteLine(" List... ");
+        }
+
     }
 }
