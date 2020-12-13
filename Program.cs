@@ -1,13 +1,13 @@
 ﻿using System;
 using ExLinq;
 
-namespace program
+namespace ESExLinq
 {
-        class program
+        class ESSExLinq
         {
             public static void Main(string[] args)
             {
-                var cities = exLinq.filtering("Firenze");
+                var cities = ExLinq.Filtering("Firenze");
 
                 foreach (var city in cities)
                 {
