@@ -1,33 +1,3 @@
-
-
-
-
-
-//Program.cs
-
-/*using System;
-using ExLinq;
-
-namespace ESExLinq
-{
-        class ESSExLinq
-        {
-            public static void Main(string[] args)
-            {
-                var cities = ExLinq.Filtering("Firenze");
-
-                foreach (var city in cities)
-                {
-                    Console.WriteLine("E' una citta");
-                }
-            }
-
-        }
-
-}
-*/
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,20 +5,10 @@ using System.Linq;
 
 
 
-// LINQ - Languace integrade query 
-
-//SELECT col1, col2 From nome_tabella;
-
-
-/* from element in collection 
-where element ==    "qualcosa"
-*/
-
-
 
 namespace ESExLinq {
 
-    class ExLinq
+    /*class ExLinq
     {
        public static IEnumerable<string> Filtering(string NameCities)
         {
@@ -74,8 +34,26 @@ namespace ESExLinq {
 
             //END
             return query;  
+         }
+
+            }*/
+
+        
 
 
-        }
-    }
+
+            class Mountains
+            {
+            
+             //public static IEnumerable<string> Filtering(string NameCities)
+                public static string[] ListOfMountains(string NameMontain)
+                {
+                    string[] mountains = NameMontain.Split(';');
+
+                    return mountains;                    
+                }
+
+            }
+    
+    
 }
