@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using ExLinq;
 
 namespace ESExLinq2
@@ -15,7 +15,6 @@ namespace ESExLinq2
                 }
             }
 
-        }*/
 
             class Mountains
             {
