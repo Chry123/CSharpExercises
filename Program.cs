@@ -2,33 +2,30 @@
 using System.Collections.Generic;
 using ECommerce;
 
-namespace Customers
+
+
+namespace ECommerce
 {
-    class Customers 
+    class Program
     {
-        public  static void  Main(string[] args)
+        static void Main(string[] args)
         {
 
-      
-                Customer firstCostomer = new Customer("Romeo", "Colosseo", "romeocoloss@gmail.com");
-                firstCostomer.Login();
-                Customer secondCustomer = new Customer("Mario", "Rossi", "m.rossi99@hotmail.com");
-                secondCustomer.Login();
-                
 
-                var list = new List<string> { "Luigi", "Mario", "Felipe" };
+            Customer firstCostomer = new Customer("Romeo", "Colosseo", 88 , "romeocoloss@gmail.com");
+            firstCostomer.Login();
+            Customer secondCustomer = new Customer("Mario", "Rossi", 10 , "m.rossi99@hotmail.com");
+            secondCustomer.Login();
 
-                    foreach (var name in list)
-                    {
-                    Console.WriteLine($"{name}");
-                    }
 
-                //Customer.GetListOfArticles();
+            Article article = new Article ("Face mask", 12.44, "No restrictions");
+            Article article2 = new Article ("Bottle of wine", 25.85, "Not under 18");
+
+            int firstId = 4;
+            article.RetrieveArticle(firstId);
+            article.DestroyArticle(3);
+
+
         }
-
     }
-                   
-            
-} 
-
-
+}
