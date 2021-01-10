@@ -1,59 +1,14 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 
-
-
-
-
-namespace ESExLinq {
-
-    /*class ExLinq
+namespace ExLINQ
+{    
+    class Mountains
     {
-       public static IEnumerable<string> Filtering(string NameCities)
+        public static string[] ListOfMountains(string startingString)
         {
-            var cities = new string [] {"Lucca","Arezzo","Firenze","Siena"};
-
-
-            //LINQ
-            //var query= 
-
-            //START
-            var query =
-
-            from city in cities 
-
-            where city == NameCities
-
-            select city;                        
-            
-            foreach (var city in query)
-            {
-                Console.WriteLine(city);
-            }
-
-            //END
-            return query;  
-         }
-
-            }*/
-
-        
-
-
-
-            class Mountains
-            {
-            
-             //public static IEnumerable<string> Filtering(string NameCities)
-                public static string[] ListOfMountains(string NameMontain)
-                {
-                    string[] mountains = NameMontain.Split(';');
-
-                    return mountains;                    
-                }
-
-            }
-    
-    
-}
+            string[] mountains = startingString.Split(';');
+            return mountains;                    
+        }
+    }
+} 

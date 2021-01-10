@@ -1,31 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using ECommerce;
+using System.Linq;
 
 
-
-namespace ECommerce
+namespace ESExLinq
 {
     class Program
     {
-        static void Main(string[] args)
-        {
+        public static void Main(string[] args)
+        {   
+                    
 
-
-            Customer firstCostomer = new Customer("Romeo", "Colosseo", 88 , "romeocoloss@gmail.com");
-            firstCostomer.Login();
-            Customer secondCustomer = new Customer("Mario", "Rossi", 10 , "m.rossi99@hotmail.com");
-            secondCustomer.Login();
-
-
-            Article article = new Article ("Face mask", 12.44, "No restrictions");
-            Article article2 = new Article ("Bottle of wine", 25.85, "Not under 18");
-
-            int firstId = 4;
-            article.RetrieveArticle(firstId);
-            article.DestroyArticle(3);
-
+            var startingString = "Monte Falco, 1658, Parco Foreste Casentinesi ; Monte Falterona, 1654, Parco Foreste Casentinesi; Monte Fumaiolo, 1407, Appennino Tosco Emiliano";
+            var result2 = ExLINQ.Mountains.ListOfMountains(startingString);
+            foreach (var item in result2)
+            {
+               Console.WriteLine(item.Split(',')[0].Trim()); 
+            } 
 
         }
     }
-}
+} 
